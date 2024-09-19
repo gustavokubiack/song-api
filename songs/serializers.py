@@ -1,8 +1,8 @@
 from django.db.models import Avg
+from django.utils.translation import gettext_lazy as _
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from songs.models import Song
-from reviews.models import Review
 
 
 class SongModelSerializer(ModelSerializer):
@@ -17,3 +17,10 @@ class SongModelSerializer(ModelSerializer):
         if rate:
             return round(rate, 1)
         return None
+
+    def validate_release_date(self, release_date):
+        if release_date.year < 1950:
+            raise serializers.ValidationError(
+                _("Release Date cannot be less than 1950")
+            )
+        return release_date
