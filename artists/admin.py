@@ -1,3 +1,16 @@
 from django.contrib import admin
+from artists.models import Artist
 
-# Register your models here.
+
+@admin.register(Artist)
+class ArtistAdmin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "name",
+        "birthday",
+        "nacionality",
+    )
+    search_fields = (
+        "id",
+        "name",
+    )
