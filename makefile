@@ -6,3 +6,12 @@ migrations:
 
 migrate:
 	@python3 manage.py migrate
+
+test:
+	@pytest -s -v
+
+test_cov:
+	@pytest -s -v --cov=.
+
+test_overview:
+	@python -m http.server 9000 --directory htmlcov
