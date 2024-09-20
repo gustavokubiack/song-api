@@ -72,3 +72,15 @@ def review(db, song):
         stars=5,
     )
     return review_instance
+
+
+@fixture
+def reviews(db, song):
+    return [
+        Review.objects.create(
+            song=song,
+            comment="Good",
+            stars=stars,
+        )
+        for stars in range(1, 5)
+    ]
