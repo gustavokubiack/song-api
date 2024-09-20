@@ -1,0 +1,19 @@
+[run]
+branch = True
+source = app
+
+[report]
+omit =
+    manage.py
+    */tests/*
+    */migrations/*
+    */__init__.py
+    */settings.py
+    *site-packages*
+    authentication/apps.py
+    app/wsgi.py
+    app/asgi.py
+    
+
+[html]
+directory = htmlcov
