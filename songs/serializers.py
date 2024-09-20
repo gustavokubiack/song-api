@@ -3,14 +3,18 @@ from django.utils.translation import gettext as _
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from songs.models import Song
+from genres.serializers import GenreModelSerializer
+from artists.serializers import ArtistModelSerializer
 
 
 class SongModelSerializer(ModelSerializer):
     rate = serializers.SerializerMethodField(read_only=True)
+    genre = GenreModelSerializer()
+    artists = ArtistModelSerializer(many=True)
 
     class Meta:
         model = Song
-        fields = "__all__"
+        fields = ["id", "rate", "title", "release_date", "resume", "genre", "artists"]
 
     def get_rate(self, obj: Song) -> float | None:
         rate = obj.reviews.aggregate(Avg("stars"))["stars__avg"]
