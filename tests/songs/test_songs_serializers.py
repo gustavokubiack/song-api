@@ -1,6 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 from songs.serializers import SongModelSerializer
-from songs.models import Song
+from artists.serializers import ArtistModelSerializer
+from genres.serializers import GenreModelSerializer
 import pytest
 from datetime import date
 
@@ -24,12 +25,13 @@ def test_invalid_release_date_should_raise_validation_error(artists, genre):
 
 @pytest.mark.django_db
 def test_valid_release_date_should_validate(artists, genre):
-    artist_ids = list(map(lambda artist: artist.id, artists))
+    artist_data = [ArtistModelSerializer(artist).data for artist in artists]
+    genre_data = GenreModelSerializer(genre).data
     serializer = SongModelSerializer(
         data={
             "title": "title",
-            "artists": artist_ids,
-            "genre": genre.id,
+            "artists": artist_data,
+            "genre": genre_data,
             "release_date": "1960-10-10",
         }
     )

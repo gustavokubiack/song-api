@@ -9,7 +9,7 @@ from artists.serializers import ArtistModelSerializer
 
 class SongModelSerializer(ModelSerializer):
     rate = serializers.SerializerMethodField(read_only=True)
-    genre = GenreModelSerializer()
+    genre = GenreModelSerializer(read_only=True)
     artists = ArtistModelSerializer(many=True)
 
     class Meta:
