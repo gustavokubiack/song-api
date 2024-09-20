@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-20 01:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/settings.py:105
+msgid "English"
+msgstr "Inglês"
+
+#: app/settings.py:106
+msgid "Português"
+msgstr "Português"
+
+#: app/settings.py:137
+msgid ""
+"The Song API enables users to manage and interact with a database of music "
+"reviews."
+msgstr ""
+"A Song API permite que os usuários gerenciem e interajam com um banco de "
+"dados de reviews de músicas"
+
+#: artists/choices.py:6
+msgid "United States of America"
+msgstr "Estados Unidos"
+
+#: artists/choices.py:7
+msgid "Brazil"
+msgstr "Brasil"
+
+#: artists/models.py:7 genres/models.py:8
+msgid "Name"
+msgstr "Nome"
+
+#: artists/models.py:8
+msgid "Birthday"
+msgstr "Data de Nascimento"
+
+#: artists/models.py:10
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#: genres/choices.py:6
+msgid "Pop"
+msgstr "Pop"
+
+#: genres/choices.py:7
+msgid "Rock"
+msgstr "Rock"
+
+#: genres/choices.py:8
+msgid "Jazz"
+msgstr "Jazz"
+
+#: genres/choices.py:9
+msgid "Hip Hop"
+msgstr ""
+
+#: genres/choices.py:10
+msgid "Classical"
+msgstr "Clássico"
+
+#: genres/choices.py:11
+msgid "Country"
+msgstr "Country"
+
+#: genres/choices.py:12
+msgid "Reggae"
+msgstr "Reggae"
+
+#: genres/choices.py:13
+msgid "Blues"
+msgstr "Blues"
+
+#: genres/choices.py:14
+msgid "Electronic"
+msgstr "Electronic"
+
+#: genres/choices.py:15
+msgid "Metal"
+msgstr "Metal"
+
+#: genres/choices.py:16
+msgid "Folk"
+msgstr "Folk"
+
+#: genres/choices.py:17
+msgid "R&B"
+msgstr "R&B"
+
+#: genres/choices.py:18
+msgid "Latin"
+msgstr "Latin"
+
+#: genres/choices.py:19
+msgid "Soul"
+msgstr "Soul"
+
+#: reviews/models.py:8
+msgid "Stars"
+msgstr "Estrelas"
+
+#: reviews/models.py:9
+msgid "Comment"
+msgstr "Comentário"
+
+#: reviews/serializers.py:13
+msgid "Rating cannot be greater than 5"
+msgstr "Avalição não pode ser maior que 5"
+
+#: reviews/serializers.py:15
+msgid "Rating cannot be less than 0"
+msgstr "Avalição não pode ser menor que 0"
+
+#: songs/models.py:8
+msgid "Title"
+msgstr "Título"
+
+#: songs/models.py:10
+msgid "Release Date"
+msgstr "Data de Lançamento"
+
+#: songs/models.py:12
+msgid "Resume"
+msgstr "Resumo"
+
+#: songs/serializers.py:24
+msgid "Release Date cannot be less than 1950"
+msgstr "A data de lançamento não pode ser inferior a 1950"
