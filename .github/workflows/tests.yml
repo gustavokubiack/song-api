@@ -26,6 +26,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Set up .env file
+      run: |
+        echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+        echo "ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}" >> .env
+        echo "DEBUG=${{ secrets.DEBUG }}" >> .env
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+        DEBUG: ${{ secrets.DEBUG }}
+
     - name: Run tests with coverage
       run: |
         make test_cov
