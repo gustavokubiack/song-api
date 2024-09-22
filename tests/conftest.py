@@ -3,7 +3,7 @@ from rest_framework.reverse import reverse
 from rest_framework.test import APIClient
 from songs.models import Song
 from artists.models import Artist
-from genres.models import Genre, GenreTypeChoices
+from genres.models import Genre
 from reviews.models import Review
 from pytest import fixture
 
@@ -39,7 +39,7 @@ def auth_client(client, user):
 
 @fixture
 def genre(db):
-    genre_instance = Genre.objects.create(name=GenreTypeChoices.BLUES)
+    genre_instance = Genre.objects.create(name="Musical")
     return genre_instance
 
 
