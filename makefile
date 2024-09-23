@@ -15,3 +15,6 @@ test_cov:
 
 test_overview:
 	@python -m http.server 9000 --directory htmlcov
+
+shell:
+	@python manage.py shell_plus
