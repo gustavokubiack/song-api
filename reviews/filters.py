@@ -8,7 +8,8 @@ class ReviewFilter(django_filters.FilterSet):
     stars = django_filters.NumberFilter()
     stars__gt = django_filters.NumberFilter(field_name="stars", lookup_expr="gt")
     stars__lt = django_filters.NumberFilter(field_name="stars", lookup_expr="lt")
+    user__username = django_filters.CharFilter(field_name="user__username")
 
     class Meta:
         model = Review
-        fields = ["stars", "song"]
+        fields = ["stars", "song", "user"]
