@@ -19,7 +19,6 @@ def test_zero_stars_should_raise_validation_error():
     assert serializer.errors["stars"] == [_("Rating cannot be less than 0")]
 
 
-@pytest.mark.teste
 @pytest.mark.django_db
 def test_four_stars_should_validate(song, user):
     serializer = ReviewSerializer(data={"stars": 4, "song": song.id, "user": user.id})

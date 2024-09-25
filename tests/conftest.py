@@ -44,6 +44,12 @@ def genre(db):
 
 
 @fixture
+def artist(db):
+    artist_instance = Artist.objects.create(name=f"Artist")
+    return artist_instance
+
+
+@fixture
 def artists(db):
     artist_list = []
     for i in range(5):

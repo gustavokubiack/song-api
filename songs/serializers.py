@@ -3,8 +3,6 @@ from django.utils.translation import gettext as _
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from songs.models import Song
-from genres.serializers import GenreModelSerializer
-from artists.serializers import ArtistModelSerializer
 
 
 class SongModelSerializer(ModelSerializer):
