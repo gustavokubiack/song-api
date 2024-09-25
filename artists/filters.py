@@ -4,7 +4,7 @@ from artists.models import Artist
 
 class ArtistFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(lookup_expr="icontains")
-    nacionality = django_filters.CharFilter(lookup_expr="icontains")
+    nationality = django_filters.CharFilter(lookup_expr="icontains")
     birthday = django_filters.NumberFilter(field_name="birthday", lookup_expr="year")
     birthday__gt = django_filters.NumberFilter(
         field_name="birthday", lookup_expr="year__gt"
@@ -15,4 +15,4 @@ class ArtistFilter(django_filters.FilterSet):
 
     class Meta:
         model = Artist
-        fields = ["name", "birthday", "nacionality"]
+        fields = ["name", "birthday", "nationality"]

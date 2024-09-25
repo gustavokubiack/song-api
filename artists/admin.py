@@ -8,7 +8,7 @@ class ArtistAdmin(admin.ModelAdmin):
         "id",
         "name",
         "birthday",
-        "nacionality",
+        "nationality",
     )
     search_fields = (
         "id",
