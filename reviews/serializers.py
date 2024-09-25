@@ -14,3 +14,10 @@ class ReviewSerializer(serializers.ModelSerializer):
         if stars < 0:
             raise serializers.ValidationError(_("Rating cannot be less than 0"))
         return stars
+
+
+class ReviewListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = "__all__"
+        depth = 1

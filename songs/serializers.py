@@ -13,7 +13,7 @@ class SongModelSerializer(ModelSerializer):
         fields = "__all__"
 
     def validate_release_date(self, release_date):
-        if release_date.year < 1950:
+        if release_date and release_date.year < 1950:
             raise serializers.ValidationError(
                 _("Release Date cannot be less than 1950")
             )
