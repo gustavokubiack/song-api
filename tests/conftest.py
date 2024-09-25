@@ -65,22 +65,24 @@ def song(db, genre, artists):
 
 
 @fixture
-def review(db, song):
+def review(db, song, user):
     review_instance = Review.objects.create(
         song=song,
         comment="Good",
         stars=5,
+        user=user,
     )
     return review_instance
 
 
 @fixture
-def reviews(db, song):
+def reviews(db, song, user):
     return [
         Review.objects.create(
             song=song,
             comment="Good",
             stars=stars,
+            user=user,
         )
         for stars in range(1, 5)
     ]

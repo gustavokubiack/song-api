@@ -1,5 +1,5 @@
 from django.utils.translation import gettext_lazy as _
-from songs.serializers import SongModelSerializer
+from songs.serializers import SongModelSerializer, SongDetailSerializer
 from artists.serializers import ArtistModelSerializer
 from genres.serializers import GenreModelSerializer
 import pytest
@@ -25,13 +25,12 @@ def test_invalid_release_date_should_raise_validation_error(artists, genre):
 
 @pytest.mark.django_db
 def test_valid_release_date_should_validate(artists, genre):
-    artist_data = [ArtistModelSerializer(artist).data for artist in artists]
-    genre_data = GenreModelSerializer(genre).data
-    serializer = SongModelSerializer(
+    artist_data = [artist.id for artist in artists]
+    serializer = SongDetailSerializer(
         data={
             "title": "title",
             "artists": artist_data,
-            "genre": genre_data,
+            "genre": genre.id,
             "release_date": "1960-10-10",
         }
     )
@@ -42,11 +41,11 @@ def test_valid_release_date_should_validate(artists, genre):
 
 @pytest.mark.django_db
 def test_song_with_reviews_should_return_two_dot_five_rate(song, reviews):
-    serializer = SongModelSerializer(song)
+    serializer = SongDetailSerializer(song)
     assert serializer.data["rate"] == 2.5
 
 
 @pytest.mark.django_db
 def test_song_without_reviews_should_return_none_rate(song):
-    serializer = SongModelSerializer(song)
+    serializer = SongDetailSerializer(song)
     assert serializer.data["rate"] is None
