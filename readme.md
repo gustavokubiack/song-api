@@ -6,7 +6,7 @@ Song API é uma API feita em Django Rest Framework, contendo autenticação, cob
 
 ## Diagrama de Entidade-Relacionamento
 
-![Diagrama de Entidade-Relacionamento](docs/er.jpeg)
+![Diagrama de Entidade-Relacionamento](docs/er.png)
 
 ## Diagrama de Classe
-![Diagrama de Classe](docs/uml.jpeg)
+![Diagrama de Classe](docs/uml.png)
